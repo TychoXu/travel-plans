@@ -9,3 +9,5 @@
 .hotel-link { display:inline-flex; align-items:center; gap:5px; margin-top:12px; color:var(--blue); font-size:11px; font-weight:800; }
 .hotel-link:hover { text-decoration:underline; }
 @media (max-width:760px) { .hotel-top { align-items:flex-start; } .hotel-status { display:none; } }
+
+.hotel-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}.hotel-logo{width:120px;height:46px;object-fit:contain;object-position:left center}.hotel-logo.stregis{width:120px;height:46px}.hotel-link{display:inline-block;margin-top:12px;color:var(--blue);font-size:11px;font-weight:800}.hotel-link:hover{text-decoration:underline}
