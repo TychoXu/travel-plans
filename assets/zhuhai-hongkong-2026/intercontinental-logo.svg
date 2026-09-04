@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 112" role="img" aria-labelledby="title desc">
+  <title id="title">InterContinental Hotels &amp; Resorts</title>
+  <desc id="desc">InterContinental Hotels &amp; Resorts logo</desc>
+  <g fill="#1d1d1b">
+    <path d="M150 4c-22 10-35 25-35 43 0 21 16 37 35 49 19-12 35-28 35-49 0-18-13-33-35-43zm0 8c16 8 27 20 27 35 0 15-11 28-27 39-16-11-27-24-27-39 0-15 11-27 27-35z"/>
+    <path fill="#fff" d="M150 19c-8 0-14 6-14 14 0 3 1 6 3 8-2 3-3 7-3 11 0 9 6 16 14 16s14-7 14-16c0-4-1-8-3-11 2-2 3-5 3-8 0-8-6-14-14-14z"/>
+    <path d="M144 26h12v4h-3v29h3v4h-12v-4h3V30h-3z"/>
+    <text x="150" y="91" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="1.1">InterContinental</text>
+    <text x="150" y="106" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8.5" letter-spacing="2.1">HOTELS &amp; RESORTS</text>
+  </g>
+</svg>
