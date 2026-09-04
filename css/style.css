@@ -8,6 +8,4 @@
 .hotel-status { margin-left:auto; padding:4px 8px; border-radius:5px; background:#f2f5f8; color:#6f7b88; font-size:9px; font-weight:800; letter-spacing:.3px; white-space:nowrap; }
 @media (max-width:760px) { .hotel-top { align-items:flex-start; } .hotel-status { display:none; } }
 
-.hotel-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}.hotel-logo{width:120px;height:46px;object-fit:contain;object-position:left center}.hotel-logo.stregis{width:120px;height:46px}
-
-.hotel-logo-intercontinental{width:250px;height:62px;object-fit:contain;object-position:left center;display:block}
+.hotel-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}.hotel-logo{width:120px;height:46px;object-fit:contain;object-position:left center}.hotel-logo.stregis{width:120px;height:46px}.hotel-logo.intercontinental{width:120px;height:58px;object-fit:cover;object-position:center}
