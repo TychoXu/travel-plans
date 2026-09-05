@@ -9,3 +9,10 @@
 @media (max-width:760px) { .hotel-top { align-items:flex-start; } .hotel-status { display:none; } }
 
 .hotel-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}.hotel-logo{width:200px;height:76px;object-fit:contain;object-position:left center}
+
+.weekday{color:var(--blue);font-weight:750}
+.day-tags{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.day-weather{display:flex;align-items:center;gap:5px;padding:5px 9px;border:1px solid #cfe0ef;border-radius:6px;background:#eef5fc;color:var(--blue);font-size:10px;font-weight:750;white-space:nowrap}
+.day-weather .temp{color:var(--navy-dark)}
+.weather-note{margin-top:6px;color:var(--muted);font-size:11px}
+@media(max-width:760px){.day-weather{font-size:10px;padding:4px 7px}}
