@@ -1,8 +1,16 @@
 # Travel Plans
 
-一个长期维护的个人旅行计划库。
+一个长期维护的个人旅行计划库。每次旅行一个独立 HTML 页面，首页 `index.html` 负责目录。
 
-每次旅行使用一个独立 HTML 页面，首页 `index.html` 作为旅行目录。
+## GitHub Pages
+
+部署完成后，网站入口就是：
+
+`https://<你的GitHub用户名>.github.io/<你的仓库名>/`
+
+也可以在仓库的 **Settings → Pages → Build and deployment → Deploy from a branch** 中选择 `main` / `/ (root)`。
+
+> 为避免写死用户名和仓库名，README 使用占位形式；上传 GitHub 后把上面的两个占位符替换成实际值即可。
 
 ## Structure
 
@@ -13,55 +21,53 @@ travel-plans/
 ├── css/
 │   └── style.css
 ├── trips/
-│   └── zhuhai-hongkong-2026.html
+│   ├── zhuhai-hongkong-2026.html
+│   ├── nagoya-2024.html
+│   ├── kyushu-2024.html
+│   ├── uae-2025.html
+│   ├── hokkaido-2025.html
+│   ├── beihai-liuzhou-2026.html
+│   └── chengdu-2026.html
 └── assets/
-    └── zhuhai-hongkong-2026/
+    └── （按旅行扩展）
 ```
 
-## How to add a new trip
+## 已完成旅行
 
-1. 在 `trips/` 新建一个 HTML，例如 `trips/japan-kansai-2027.html`。
-2. 在首页 `index.html` 增加对应旅行卡片。
-3. 新页面引用共用 CSS：
+- 日本 · 名古屋及周边｜2024/11/22–11/24
+- 日本 · 九州｜2024/12/15–12/21
+- 阿联酋 · 阿布扎比 · 迪拜｜2025/5/30–6/3
+- 日本 · 北海道｜2025/12/24–12/30
+- 广西 · 北海 · 柳州｜2026/4/20–4/24
+- 成都｜2026/5/18–5/21
 
-```html
-<link rel="stylesheet" href="../css/style.css">
-```
+历史行程页面保留原始资料中的不确定项，不把“预计时间”“城市归档”或网上其他日期的航班时刻冒充为实际记录。已能通过互联网核实的历史航班和历史天气会在对应页面单独标注来源。
 
-4. 图片等资源放进对应的 `assets/<trip-name>/` 目录。
+## 当前旅行计划
 
-## GitHub Pages
+**珠海 · 澳门 · 香港｜2026/11/29–12/6**
 
-本项目不依赖 Node.js、npm 或构建工具，可直接使用 GitHub Pages。
+北京 → 珠海 → 澳门 → 香港 → 北京
 
-在 GitHub Repository 中选择：
-
-**Settings → Pages → Build and deployment → Deploy from a branch**
-
-Branch 选择 `main`，Folder 选择 `/ (root)`。
-
-## Design principle
-
-- 一个旅行 = 一个 HTML
-- 所有旅行共用 `css/style.css`
-- 图片和资源按旅行分别存放
-- 首页负责旅行索引
-- 行程页面负责具体计划
-- 尽量保持简单，不引入不必要的框架和构建流程
-
-## Current trip
-
-**珠海 · 香港 6天5晚**
-
-北京 → 珠海 → 香港 → 北京
-
-- 珠海：珠海仁恒洲际（2晚）
-- 长隆：海洋王国全天
-- 长隆：计划观看 20:00 烟花（出发前以官方节目表确认）
-- 香港：丽晶酒店（3晚）
+- 珠海：珠海仁恒洲际（当前代码版本 2 晚）
+- 长隆：海洋王国全天；计划观看 20:00 烟花，以官方当天节目表为准
+- 澳门：当前代码版本使用澳门瑞吉（2 晚）
+- 香港：香港丽晶（3 晚）
 - 香港迪士尼：全天
 
+## 页面设计
 
-## Hotel cards
+- 一个旅行 = 一个 HTML 页面
+- 所有旅行共用 `css/style.css`
+- 地图使用 Leaflet + OpenStreetMap；点位按具体地点校准，不再使用城市中心点代替景点
+- 计划行程使用“早上 / 上午 / 中午 / 下午 / 傍晚 / 晚上”等自然时段，不写未经确认的精确时间
+- 已完成旅行的天气使用历史记录；未来旅行不把历史气候平均值当成预测
+- 酒店卡片包含品牌/酒店标识，并链接到酒店官网
+- 连锁品牌酒店使用品牌通用标识，例如 EDITION、Sheraton、St. Regis、InterContinental 等
 
-酒店卡片包含品牌标识、酒店官网入口和本次行程中的选择状态。珠海已确定为仁恒洲际；香港使用香港丽晶。
+## 新增旅行
+
+1. 在 `trips/` 新建 HTML。
+2. 在首页 `index.html` 添加旅行卡片。
+3. 行程专属资源放进 `assets/<trip-name>/`。
+4. 需要地图时，使用真实地点坐标，并在页面脚本中单独维护。
