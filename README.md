@@ -6,7 +6,7 @@
 
 部署完成后，网站入口就是：
 
-`https://tychoxu.github.io/travel-plans//`
+`https://<你的GitHub用户名>.github.io/<你的仓库名>/`
 
 也可以在仓库的 **Settings → Pages → Build and deployment → Deploy from a branch** 中选择 `main` / `/ (root)`。
 
