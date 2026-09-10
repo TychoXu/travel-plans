@@ -17,34 +17,41 @@
 .history-table{width:100%;border-collapse:collapse;font-size:12px}.history-table th,.history-table td{padding:11px 13px;border-bottom:1px solid #edf0f3;text-align:left}.history-table th{background:#fbfcfd;color:var(--navy);font-weight:800}.history-table td{color:#637184}.history-table tr:last-child td{border-bottom:none}.source-note{margin-top:9px;color:#8a95a2;font-size:10px;line-height:1.6}.source-link{color:var(--blue);font-weight:700}.history-fact{height:100%;min-height:220px;padding:20px;border:1px solid var(--border);border-radius:10px;background:#fbfcfd}.fact-label{margin-top:10px;color:var(--muted);font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase}.fact-label:first-child{margin-top:0}.fact-value{margin-top:3px;color:var(--navy-dark);font-size:13px;font-weight:700}.brand-wordmark{width:200px;height:76px;display:flex;align-items:center;justify-content:flex-start;color:var(--navy);font-family:Georgia,serif;font-size:18px;font-weight:700;letter-spacing:.3px}.history-day .day-body{min-height:170px}.rule ul{margin:0;padding-left:20px;color:var(--muted);font-size:12px}.rule li+li{margin-top:7px}
 
 /* Historical trip redesign: same visual grammar as the current Zhuhai / Hong Kong trip. */
-.history-day .day-header{align-items:center}.history-day .day-body{min-height:0}.history-day .schedule{padding:4px 0 10px}.history-day .schedule-item{padding:14px 0}.history-day .day-map-wrap{display:flex;flex-direction:column;gap:10px}.history-day .day-map{min-height:250px;height:250px}.stay-mini{border:1px solid var(--border);border-radius:10px;background:#fbfcfd;padding:14px 16px}.stay-mini .stay-label{color:var(--muted);font-size:10px;font-weight:800;letter-spacing:.7px;text-transform:uppercase}.stay-mini .stay-name{margin-top:4px;color:var(--navy);font-size:14px;font-weight:800}.day-empty{min-height:250px;display:flex;align-items:center}.flight-card{margin:8px 0 10px;border:1px solid #cfdbe8;border-radius:10px;background:#fff;overflow:hidden}.flight-top{display:flex;align-items:center;justify-content:space-between;padding:12px 15px 9px;background:#fbfcfd;border-bottom:1px solid #edf0f3}.flight-airline{color:var(--muted);font-size:10px;font-weight:800;letter-spacing:.6px;text-transform:uppercase}.flight-no{color:var(--navy);font-size:16px;font-weight:850}.flight-main{display:grid;grid-template-columns:1fr 70px 1fr;align-items:center;gap:10px;padding:15px}.airport{min-width:0}.airport.to{text-align:right}.airport-code{color:var(--navy-dark);font-size:24px;font-weight:850;letter-spacing:.5px;line-height:1}.airport-name{margin-top:5px;color:var(--muted);font-size:11px;line-height:1.35}.flight-time{margin-top:4px;color:var(--blue);font-size:12px;font-weight:800}.flight-arrow{position:relative;text-align:center;color:var(--blue);font-size:18px}.flight-arrow:before{content:"";display:block;height:1px;background:#cbd7e4;margin:0 0 -11px}.flight-arrow span{position:relative;padding:0 7px;background:#fff}.flight-foot{padding:9px 15px;border-top:1px solid #edf0f3;color:#7b8795;font-size:10px}.hotel-grid{grid-template-columns:repeat(2,1fr)}.hotel-logo.wordmark{width:auto;height:48px;object-fit:contain}.hotel-brand{color:var(--muted);font-size:10px;font-weight:800;letter-spacing:.6px;text-transform:uppercase}.history-weather-note{font-size:10px;color:var(--muted)}@media(max-width:900px){.history-day .day-map{height:220px;min-height:220px}.flight-main{grid-template-columns:1fr 45px 1fr}.airport-code{font-size:20px}}
+.history-day .day-header{align-items:center}.history-day .day-body{min-height:0}.history-day .schedule{padding:4px 0 10px}.history-day .schedule-item{padding:14px 0}.history-day .day-map-wrap{display:flex;flex-direction:column;gap:10px}.history-day .day-map{min-height:250px;height:250px}.stay-mini{border:1px solid var(--border);border-radius:10px;background:#fbfcfd;padding:14px 16px}.stay-mini .stay-label{color:var(--muted);font-size:10px;font-weight:800;letter-spacing:.7px;text-transform:uppercase}.stay-mini .stay-name{margin-top:4px;color:var(--navy);font-size:14px;font-weight:800}.day-empty{min-height:250px;display:flex;align-items:center}.flight-card{margin:8px 0 10px;border:1px solid #cfdbe8;border-radius:10px;background:#fff;overflow:hidden}.flight-top{display:flex;align-items:center;justify-content:space-between;padding:12px 15px 9px;background:#fbfcfd;border-bottom:1px solid #edf0f3}.flight-airline{color:var(--muted);font-size:10px;font-weight:800;letter-spacing:.6px;text-transform:uppercase}.flight-no{color:var(--navy);font-size:16px;font-weight:850}.flight-main{display:grid;grid-template-columns:1fr 70px 1fr;align-items:center;gap:10px;padding:15px}.airport{min-width:0}.airport.to{text-align:right}.airport-code{color:var(--navy-dark);font-size:24px;font-weight:850;letter-spacing:.5px;line-height:1}.airport-name{margin-top:5px;color:var(--muted);font-size:11px;line-height:1.35}.flight-time{margin-top:4px;color:var(--blue);font-size:12px;font-weight:800}.flight-arrow{position:relative;text-align:center;color:var(--blue);font-size:18px}.flight-arrow:before{content:"";display:block;height:1px;background:#cbd7e4;margin:0 0 -11px}.flight-arrow span{position:relative;padding:0 7px;background:#fff}.flight-foot{padding:9px 15px;border-top:1px solid #edf0f3;color:#7b8795;font-size:10px}.hotel-grid{grid-template-columns:repeat(2,1fr)}.hotel-brand{color:var(--muted);font-size:10px;font-weight:800;letter-spacing:.6px;text-transform:uppercase}.history-weather-note{font-size:10px;color:var(--muted)}@media(max-width:900px){.history-day .day-map{height:220px;min-height:220px}.flight-main{grid-template-columns:1fr 45px 1fr}.airport-code{font-size:20px}}
 
 /* Hotel logo display: only brand-specific classes below alter visual scale. */
 .hotel-card{position:relative}
 .hotel-top{display:flex;align-items:center;justify-content:flex-start;gap:14px;min-height:64px;margin-bottom:14px;overflow:visible}
-.hotel-logo{display:block;width:auto;height:42px;max-width:180px;object-fit:contain;object-position:left center;flex:0 0 auto;transform:none;transform-origin:left center}
-.hotel-logo.brand-wide{height:42px;max-width:180px;transform:none}
-.hotel-logo.brand-compact{height:40px;max-width:165px;transform:none}
-.hotel-logo.brand-square{height:46px;max-width:100px;transform:none}
-.hotel-logo.photo-logo{height:48px;width:48px;max-width:48px;object-fit:cover;border-radius:6px;transform:none}
-.hotel-logo.invert-on-light{filter:invert(1);transform:none}
-
 /* These four source logos have unusually large internal whitespace / compact wordmarks.
    Scale only these four; all other hotel logos keep the standard size above. */
-.hotel-logo.logo-intercontinental{height:48px;max-width:190px;transform:scale(2.35)}
-.hotel-logo.logo-st-regis{height:48px;max-width:190px;transform:scale(2.15)}
-.hotel-logo.logo-ritz-carlton{height:48px;max-width:190px;transform:scale(2.20)}
-.hotel-logo.logo-hyatt-place{height:48px;max-width:190px;transform:scale(2.25)}
-
 .hotel-status{margin-left:auto;padding:4px 8px;border-radius:5px;background:#f2f5f8;color:#6f7b88;font-size:9px;font-weight:800;letter-spacing:.3px;white-space:nowrap}
 .hotel-brandmark-text{min-height:58px;display:flex;align-items:center;color:var(--navy);font-weight:750}
 @media(max-width:760px){
   .hotel-top{align-items:center;min-height:58px}
-  .hotel-logo{height:38px;max-width:150px}
-  .hotel-logo.brand-square{height:42px;max-width:90px}
-  .hotel-logo.logo-intercontinental{height:44px;transform:scale(2.05)}
-  .hotel-logo.logo-st-regis{height:44px;transform:scale(1.9)}
-  .hotel-logo.logo-ritz-carlton{height:44px;transform:scale(1.95)}
-  .hotel-logo.logo-hyatt-place{height:44px;transform:scale(2.0)}
   .hotel-status{display:none}
 }
+
+/* Hotel logo display: fixed visual stage; source assets remain untouched. */
+.hotel-top{min-height:72px}
+.hotel-logo-wrap{
+  width:210px;
+  height:58px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  overflow:hidden;
+  flex:0 0 auto;
+}
+.hotel-logo{
+  display:block;
+  width:auto;
+  height:42px;
+  max-width:180px;
+  object-fit:contain;
+  object-position:left center;
+  flex:0 0 auto;
+}
+.hotel-logo.logo-intercontinental{width:210px;height:auto;max-width:none}
+.hotel-logo.logo-st-regis{width:150px;height:auto;max-width:none}
+.hotel-logo.logo-ritz-carlton{width:175px;height:auto;max-width:none}
+.hotel-logo.logo-hyatt-place{width:145px;height:auto;max-width:none}
