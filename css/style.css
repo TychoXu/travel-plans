@@ -46,3 +46,26 @@
 .hotel-logo.logo-marriott{height:48px;max-width:190px}
 .hotel-logo.logo-kai{height:48px;max-width:170px}
 .hotel-logo.logo-omo{height:48px;max-width:180px}
+/* Final hotel logo sizing — tuned for visual, not source, dimensions. */
+.hotel-top{min-height:88px;overflow:visible}
+.hotel-logo{display:block;width:auto;max-width:240px;object-fit:contain;object-position:left center;transform-origin:left center}
+.hotel-logo.intercontinental{height:70px;max-width:260px;transform:scale(2.35)}
+.hotel-logo.brand-wide.logo-st-regis,
+.hotel-logo.logo-st-regis{height:70px;max-width:250px;transform:scale(2.15)}
+.hotel-logo.logo-ritz-carlton{height:70px;max-width:260px;transform:scale(2.35)}
+.hotel-logo.logo-hyatt-place{height:72px;max-width:250px;transform:scale(2.35)}
+.hotel-logo.logo-sheraton{height:58px;max-width:230px;transform:scale(1.9)}
+.hotel-logo.logo-atlantis-royal{height:58px;max-width:220px;transform:scale(1.7)}
+.hotel-logo.logo-regent{height:52px;max-width:230px}
+.hotel-logo.logo-edition{height:52px;max-width:230px}
+.hotel-logo.logo-snow-peak{height:52px;max-width:230px}
+.hotel-logo.logo-marriott{height:52px;max-width:200px}
+.hotel-logo.logo-kai{height:52px;max-width:180px}
+.hotel-logo.logo-omo{height:52px;max-width:190px}
+@media(max-width:760px){
+  .hotel-top{min-height:76px}
+  .hotel-logo.intercontinental{height:62px;transform:scale(2.0)}
+  .hotel-logo.logo-st-regis{height:62px;transform:scale(1.9)}
+  .hotel-logo.logo-ritz-carlton{height:62px;transform:scale(2.0)}
+  .hotel-logo.logo-hyatt-place{height:64px;transform:scale(2.0)}
+}
