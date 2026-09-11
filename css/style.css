@@ -19,32 +19,8 @@
 /* Historical trip redesign: same visual grammar as the current Zhuhai / Hong Kong trip. */
 .history-day .day-header{align-items:center}.history-day .day-body{min-height:0}.history-day .schedule{padding:4px 0 10px}.history-day .schedule-item{padding:14px 0}.history-day .day-map-wrap{display:flex;flex-direction:column;gap:10px}.history-day .day-map{min-height:250px;height:250px}.stay-mini{border:1px solid var(--border);border-radius:10px;background:#fbfcfd;padding:14px 16px}.stay-mini .stay-label{color:var(--muted);font-size:10px;font-weight:800;letter-spacing:.7px;text-transform:uppercase}.stay-mini .stay-name{margin-top:4px;color:var(--navy);font-size:14px;font-weight:800}.day-empty{min-height:250px;display:flex;align-items:center}.flight-card{margin:8px 0 10px;border:1px solid #cfdbe8;border-radius:10px;background:#fff;overflow:hidden}.flight-top{display:flex;align-items:center;justify-content:space-between;padding:12px 15px 9px;background:#fbfcfd;border-bottom:1px solid #edf0f3}.flight-airline{color:var(--muted);font-size:10px;font-weight:800;letter-spacing:.6px;text-transform:uppercase}.flight-no{color:var(--navy);font-size:16px;font-weight:850}.flight-main{display:grid;grid-template-columns:1fr 70px 1fr;align-items:center;gap:10px;padding:15px}.airport{min-width:0}.airport.to{text-align:right}.airport-code{color:var(--navy-dark);font-size:24px;font-weight:850;letter-spacing:.5px;line-height:1}.airport-name{margin-top:5px;color:var(--muted);font-size:11px;line-height:1.35}.flight-time{margin-top:4px;color:var(--blue);font-size:12px;font-weight:800}.flight-arrow{position:relative;text-align:center;color:var(--blue);font-size:18px}.flight-arrow:before{content:"";display:block;height:1px;background:#cbd7e4;margin:0 0 -11px}.flight-arrow span{position:relative;padding:0 7px;background:#fff}.flight-foot{padding:9px 15px;border-top:1px solid #edf0f3;color:#7b8795;font-size:10px}.hotel-brand{color:var(--muted);font-size:10px;font-weight:800;letter-spacing:.6px;text-transform:uppercase}.history-weather-note{font-size:10px;color:var(--muted)}@media(max-width:900px){.history-day .day-map{height:220px;min-height:220px}.flight-main{grid-template-columns:1fr 45px 1fr}.airport-code{font-size:20px}}
 
-/* Hotel logo display: only brand-specific classes below alter visual scale. */
-.hotel-top{display:flex;align-items:center;justify-content:flex-start;gap:14px;min-height:64px;margin-bottom:14px;overflow:visible}
-/* These four source logos have unusually large internal whitespace / compact wordmarks.
-   Scale only these four; all other hotel logos keep the standard size above. */
-@media(max-width:760px){
-  .hotel-top{align-items:center;min-height:58px}
-  }
-
-/* Hotel logo display: fixed visual stage; source assets remain untouched. */
-.hotel-top{min-height:72px}
-/* =========================================================
-   HOTEL CARD / LOGO SYSTEM
-   ========================================================= */
-
-/*
-  固定的是 Logo 展示“舞台”，不是图片高度。
-  每个品牌只在舞台内控制自己的视觉占比。
-*/
-/* 默认：适合多数品牌 */
-/* 仅处理原始透明画布/字标视觉偏小的品牌 */
-/* 以下保持原先正常视觉比例 */
-@media (max-width:900px){
-  }
-
-@media (max-width:600px){
-  }
+/* Hotel logo stage: fixed size for every card; source assets untouched. */
+.hotel-top{display:flex;align-items:center;justify-content:center;gap:14px;min-height:72px;margin-bottom:14px;overflow:hidden}
 
 /* =========================================================
    HOTEL DISPLAY — HORIZONTAL ROW
@@ -94,148 +70,74 @@
   box-sizing:border-box;
 }
 
+/* ---------------------------------------------------------
+   LOGO NORMALIZATION
+   One fixed stage (.hotel-logo-box) for every brand.
+   Each brand only sets --logo-h, the rendered image height,
+   chosen so that the *visible mark* looks optically equal in
+   size across brands (transparent canvas padding compensated).
+   --------------------------------------------------------- */
 .hotel-logo-box{
-  width:230px;
-  height:82px;
+  width:232px;
+  height:96px;
   display:flex;
   align-items:center;
   justify-content:center;
   overflow:hidden;
 }
 
-.hotel-logo-box img,
-.hotel-top>img.hotel-logo{
+.hotel-logo-box img.hotel-logo{
   display:block;
   width:auto;
-  height:auto;
+  max-width:100%;
+  height:var(--logo-h,54px);
   object-fit:contain;
   object-position:center;
 }
 
-/* ---- Visual normalization ----
-   Do NOT force one physical image size.
-   Each logo gets a visual footprint appropriate to its aspect ratio
-   and source canvas. Wide raster logos with large transparent margins
-   use object-fit:cover so the transparent canvas does not make the
-   visible mark look artificially tiny.
-*/
+/* White wordmarks need inverting on the light card. */
+.hotel-logo.invert-on-light{filter:invert(1)}
 
-/* InterContinental: source PNG is 16:9 with large transparent margins. */
-.hotel-logo-box.logo-intercontinental img,
-.hotel-top>img.logo-intercontinental{
-  width:280px;
-  height:68px;
-  max-width:none;
-  max-height:none;
-  object-fit:cover;
-  object-position:center;
+/* Text wordmark fallback for brands with no asset in the repo. */
+.hotel-logo-text{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#123c69;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:19px;
+  font-weight:700;
+  line-height:1.25;
+  letter-spacing:.06em;
+}
+.hotel-logo-text span{
+  margin-top:6px;
+  font-family:Inter,"Noto Sans SC",Arial,sans-serif;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:#6c86a2;
 }
 
-/* St. Regis: wide wordmark; keep the full vector logo visible. */
-.hotel-logo-box.logo-st-regis img,
-.hotel-top>img.logo-st-regis{
-  width:195px;
-  height:68px;
-  max-width:none;
-  max-height:none;
-  object-fit:contain;
-}
-
-/* Ritz-Carlton: raster has large transparent margins. */
-.hotel-logo-box.logo-ritz-carlton img,
-.hotel-top>img.logo-ritz-carlton{
-  width:270px;
-  height:68px;
-  max-width:none;
-  max-height:none;
-  object-fit:cover;
-  object-position:center;
-}
-
-/* Hyatt Place is a deliberately vertical brand mark. */
-.hotel-logo-box.logo-hyatt-place img,
-.hotel-top>img.logo-hyatt-place{
-  width:72px;
-  height:82px;
-  max-width:none;
-  max-height:none;
-  object-fit:contain;
-}
-
-/* Other brands: balanced visual footprint. */
-.hotel-logo-box.logo-sheraton img,
-.hotel-top>img.logo-sheraton{
-  width:225px;
-  height:66px;
-  max-width:none;
-  max-height:none;
-  object-fit:cover;
-  object-position:center;
-}
-
-.hotel-logo-box.logo-regent img,
-.hotel-top>img.logo-regent{
-  width:210px;
-  height:58px;
-  max-width:none;
-  max-height:none;
-  object-fit:contain;
-}
-
-.hotel-logo-box.logo-edition img,
-.hotel-top>img.logo-edition{
-  width:210px;
-  height:58px;
-  max-width:none;
-  max-height:none;
-  object-fit:contain;
-}
-
-.hotel-logo-box.logo-atlantis img,
-.hotel-top>img.logo-atlantis{
-  width:170px;
-  height:72px;
-  max-width:none;
-  max-height:none;
-  object-fit:contain;
-}
-
-.hotel-logo-box.logo-snow-peak img,
-.hotel-top>img.logo-snow-peak{
-  width:220px;
-  height:64px;
-  max-width:none;
-  max-height:none;
-  object-fit:cover;
-  object-position:center;
-}
-
-.hotel-logo-box.logo-marriott img,
-.hotel-top>img.logo-marriott{
-  width:155px;
-  height:64px;
-  max-width:none;
-  max-height:none;
-  object-fit:contain;
-}
-
-.hotel-logo-box.logo-kai img,
-.hotel-top>img.logo-kai{
-  width:150px;
-  height:64px;
-  max-width:none;
-  max-height:none;
-  object-fit:contain;
-}
-
-.hotel-logo-box.logo-omo img,
-.hotel-top>img.logo-omo{
-  width:175px;
-  height:64px;
-  max-width:none;
-  max-height:none;
-  object-fit:contain;
-}
+/* ---- Per-brand optical heights ---- */
+.hotel-logo-box.logo-sheraton{--logo-h:64px}          /* PNG, ~28% vertical padding */
+.hotel-logo-box.logo-ritz-carlton{--logo-h:88px}      /* PNG, very large padding */
+.hotel-logo-box.logo-marriott{--logo-h:56px}
+.hotel-logo-box.logo-st-regis{--logo-h:54px}
+.hotel-logo-box.logo-edition{--logo-h:28px}           /* ultra-wide wordmark */
+.hotel-logo-box.logo-atlantis{--logo-h:78px}
+.hotel-logo-box.logo-intercontinental{--logo-h:90px}  /* PNG, 16:9 canvas */
+.hotel-logo-box.logo-regent{--logo-h:27px}            /* ultra-wide wordmark */
+.hotel-logo-box.logo-hyatt-place{--logo-h:78px}       /* vertical brand mark */
+.hotel-logo-box.logo-unbound{--logo-h:74px}
+.hotel-logo-box.logo-omo{--logo-h:33px}
+.hotel-logo-box.logo-kai{--logo-h:58px}
+.hotel-logo-box.logo-nonokaze{--logo-h:37px}
+.hotel-logo-box.logo-royal-park{--logo-h:33px}
+.hotel-logo-box.logo-candeo{--logo-h:34px}
 
 .hotel-status{
   position:absolute;
@@ -311,10 +213,9 @@
     padding:20px;
   }
   .hotel-top{padding:0 10px}
-  .hotel-logo-box{width:175px;height:100px}
-  .hotel-logo-box.logo-intercontinental img{width:220px;height:64px}
-  .hotel-logo-box.logo-st-regis img{width:170px;height:64px}
-  .hotel-logo-box.logo-ritz-carlton img{width:220px;height:64px}
+  .hotel-logo-box{width:176px;height:88px}
+  .hotel-logo-box img.hotel-logo{height:calc(var(--logo-h,54px) * .82)}
+  .hotel-logo-text{font-size:17px}
 }
 
 @media (max-width:640px){
@@ -333,7 +234,8 @@
     padding:0;
     margin-bottom:16px;
   }
-  .hotel-logo-box{height:88px}
+  .hotel-logo-box{width:100%;max-width:232px;height:92px}
+  .hotel-logo-box img.hotel-logo{height:var(--logo-h,54px)}
   .hotel-brand,.hotel-name,.hotel-dates,.hotel-note{
     margin-left:0;
     margin-right:0;
