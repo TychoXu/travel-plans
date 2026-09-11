@@ -37,9 +37,9 @@
   width:100%;
   min-height:166px;
   box-sizing:border-box;
-  padding:20px 28px 20px 24px;
+  padding:20px 28px 20px 0; /* left padding moved into .hotel-top (logo column) so the logo centers against the divider */
   display:grid;
-  grid-template-columns:270px minmax(0,1fr);
+  grid-template-columns:294px minmax(0,1fr);
   column-gap:28px;
   align-items:center;
   background:#fff;
@@ -65,7 +65,7 @@
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:0 18px;
+  padding:0;
   border-right:1px solid #edf1f5;
   box-sizing:border-box;
 }
@@ -192,11 +192,11 @@
 
 @media (max-width:900px){
   .hotel-card{
-    grid-template-columns:200px minmax(0,1fr);
+    grid-template-columns:220px minmax(0,1fr);
     column-gap:22px;
-    padding:20px;
+    padding:20px 20px 20px 0;
   }
-  .hotel-top{padding:0 10px}
+  .hotel-top{padding:0}
   .hotel-logo-box{width:176px;height:88px}
   .hotel-logo-box img.hotel-logo{height:calc(var(--logo-h,54px) * .82)}
   .hotel-logo-text{font-size:17px}
@@ -258,10 +258,10 @@
 /* ---- 2. Logo stage: one fixed, larger stage for every brand ---- */
 .hotel-top{
   min-height:132px;
-  padding:0 20px;
+  padding:0;
   border-right:1px solid #e4eaf0;
 }
-.hotel-card{min-height:180px;grid-template-columns:296px minmax(0,1fr)}
+.hotel-card{min-height:180px;grid-template-columns:320px minmax(0,1fr)}
 
 .hotel-logo-box{
   position:relative;
@@ -315,8 +315,8 @@ a.hotel-card{text-decoration:none;color:inherit;cursor:pointer}
 .hotel-logo-box.logo-unbound{--lw:153.2px;--lh:114.9px;--dx:0.0px;--dy:-0.1px}
 
 @media (max-width:900px){
-  .hotel-card{grid-template-columns:268px minmax(0,1fr);column-gap:20px}
-  .hotel-top{padding:0 12px}
+  .hotel-card{grid-template-columns:288px minmax(0,1fr);column-gap:20px}
+  .hotel-top{padding:0}
   .hotel-logo-box{width:220px;height:100px}
   .hotel-logo-box img.hotel-logo{
     width:calc(var(--lw,150px) * .92);
