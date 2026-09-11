@@ -354,8 +354,8 @@ a.hotel-card{text-decoration:none;color:inherit;cursor:pointer}
 .hotel-logo-box.logo-lands-end{--lw:188.6px;--lh:54.7px;--dx:0.0px;--dy:0.0px}
 .hotel-logo-box.logo-edgewater{--lw:187.7px;--lh:54.9px;--dx:0.0px;--dy:0.0px}
 .hotel-logo-box.logo-hermitage{--lw:159.7px;--lh:64.6px;--dx:0.0px;--dy:0.0px}
-.hotel-logo-box.logo-ebb{--lw:220.2px;--lh:171.9px;--dx:-0.7px;--dy:2.5px}
-.hotel-logo-box.logo-ebb img.hotel-logo{clip-path:inset(42.98% 4.7% 45.85% 5.37%)}
+.hotel-logo-box.logo-ebb{--lw:220.2px;--lh:171.9px;--dx:-0.7px;--dy:1.5px}
+.hotel-logo-box.logo-ebb img.hotel-logo{clip-path:inset(29.8% 4.7% 31.52% 5.37%)}
 .hotel-logo-box.logo-poshtel{display:flex;align-items:center;justify-content:center;color:#31496b}
 .hotel-logo-inline{display:block}
 .hotel-logo-box.logo-wordmark{display:flex;align-items:center;justify-content:center;padding:0 14px}
