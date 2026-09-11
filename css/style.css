@@ -47,15 +47,21 @@
   }
 
 /* =========================================================
-   HOTEL DISPLAY — FULL-WIDTH HORIZONTAL ROW
+   HOTEL DISPLAY — HORIZONTAL ROW
    ========================================================= */
-.hotel-grid{display:flex;flex-direction:column;gap:14px}
+
+.hotel-grid{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
 .hotel-card{
   position:relative;
   width:100%;
-  min-height:168px;
+  min-height:166px;
   box-sizing:border-box;
-  padding:22px 28px 22px 24px;
+  padding:20px 28px 20px 24px;
   display:grid;
   grid-template-columns:270px minmax(0,1fr);
   column-gap:28px;
@@ -68,68 +74,273 @@
   color:inherit;
   transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
 }
-.hotel-card:hover{transform:translateY(-1px);border-color:#cbd8e4;box-shadow:0 10px 26px rgba(25,60,95,.085)}
+
+.hotel-card:hover{
+  transform:translateY(-1px);
+  border-color:#cbd8e4;
+  box-shadow:0 10px 26px rgba(25,60,95,.085);
+}
+
 .hotel-top{
   grid-column:1;
   grid-row:1 / span 5;
   min-width:0;
-  min-height:120px;
+  min-height:124px;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:0 26px;
+  padding:0 18px;
   border-right:1px solid #edf1f5;
   box-sizing:border-box;
 }
+
 .hotel-logo-box{
-  width:100%;
-  height:116px;
+  width:230px;
+  height:82px;
   display:flex;
   align-items:center;
   justify-content:center;
   overflow:hidden;
 }
-.hotel-logo-box img,.hotel-top>img.hotel-logo{
+
+.hotel-logo-box img,
+.hotel-top>img.hotel-logo{
   display:block;
   width:auto;
   height:auto;
-  max-width:220px;
-  max-height:82px;
   object-fit:contain;
-  object-position:center center;
+  object-position:center;
 }
-/* Brand-specific visual bounds; the frame itself stays identical. */
-.hotel-logo-box.logo-intercontinental img,.hotel-top>img.logo-intercontinental{max-width:225px;max-height:68px}
-.hotel-logo-box.logo-st-regis img,.hotel-top>img.logo-st-regis{max-width:205px;max-height:82px}
-.hotel-logo-box.logo-ritz-carlton img,.hotel-top>img.logo-ritz-carlton{max-width:205px;max-height:76px}
-.hotel-logo-box.logo-hyatt-place img,.hotel-top>img.logo-hyatt-place{max-width:205px;max-height:78px}
-.hotel-logo-box.logo-sheraton img,.hotel-top>img.logo-sheraton{max-width:185px;max-height:64px}
-.hotel-logo-box.logo-regent img,.hotel-top>img.logo-regent{max-width:230px;max-height:62px}
-.hotel-logo-box.logo-edition img,.hotel-top>img.logo-edition{max-width:220px;max-height:62px}
-.hotel-logo-box.logo-atlantis img,.hotel-top>img.logo-atlantis{max-width:190px;max-height:76px}
-.hotel-logo-box.logo-snow-peak img,.hotel-top>img.logo-snow-peak{max-width:225px;max-height:68px}
-.hotel-logo-box.logo-marriott img,.hotel-top>img.logo-marriott{max-width:170px;max-height:70px}
-.hotel-logo-box.logo-kai img,.hotel-top>img.logo-kai{max-width:185px;max-height:70px}
-.hotel-logo-box.logo-omo img,.hotel-top>img.logo-omo{max-width:190px;max-height:70px}
-.hotel-brandmark-text{display:none!important}
-.hotel-status{position:absolute;right:28px;top:22px;padding:5px 9px;border-radius:6px;background:#f3f6f9;color:#617b96;font-size:11px;line-height:1}
-.hotel-brand{grid-column:2;grid-row:1;margin:0 92px 5px 0;font-size:12px;line-height:1.3;color:#6c86a2}
-.hotel-name{grid-column:2;grid-row:2;margin:0 92px 8px 0;font-size:20px;line-height:1.35;font-weight:700;color:#123c69}
-.hotel-dates{grid-column:2;grid-row:3;margin:0 92px 12px 0;font-size:13px;line-height:1.4;color:#6883a1}
-.hotel-note{grid-column:2;grid-row:4;margin:0 70px 0 0;max-width:900px;font-size:13px;line-height:1.7;color:#617b96}
-.hotel-arrow{position:absolute;right:28px;bottom:24px;font-size:22px;line-height:1;color:#6685a7;opacity:0;transition:opacity .18s ease,transform .18s ease;transform:translateX(-4px)}
-.hotel-card:hover .hotel-arrow{opacity:1;transform:translateX(0)}
+
+/* ---- Visual normalization ----
+   Do NOT force one physical image size.
+   Each logo gets a visual footprint appropriate to its aspect ratio
+   and source canvas. Wide raster logos with large transparent margins
+   use object-fit:cover so the transparent canvas does not make the
+   visible mark look artificially tiny.
+*/
+
+/* InterContinental: source PNG is 16:9 with large transparent margins. */
+.hotel-logo-box.logo-intercontinental img,
+.hotel-top>img.logo-intercontinental{
+  width:280px;
+  height:68px;
+  max-width:none;
+  max-height:none;
+  object-fit:cover;
+  object-position:center;
+}
+
+/* St. Regis: wide wordmark; keep the full vector logo visible. */
+.hotel-logo-box.logo-st-regis img,
+.hotel-top>img.logo-st-regis{
+  width:195px;
+  height:68px;
+  max-width:none;
+  max-height:none;
+  object-fit:contain;
+}
+
+/* Ritz-Carlton: raster has large transparent margins. */
+.hotel-logo-box.logo-ritz-carlton img,
+.hotel-top>img.logo-ritz-carlton{
+  width:270px;
+  height:68px;
+  max-width:none;
+  max-height:none;
+  object-fit:cover;
+  object-position:center;
+}
+
+/* Hyatt Place is a deliberately vertical brand mark. */
+.hotel-logo-box.logo-hyatt-place img,
+.hotel-top>img.logo-hyatt-place{
+  width:72px;
+  height:82px;
+  max-width:none;
+  max-height:none;
+  object-fit:contain;
+}
+
+/* Other brands: balanced visual footprint. */
+.hotel-logo-box.logo-sheraton img,
+.hotel-top>img.logo-sheraton{
+  width:225px;
+  height:66px;
+  max-width:none;
+  max-height:none;
+  object-fit:cover;
+  object-position:center;
+}
+
+.hotel-logo-box.logo-regent img,
+.hotel-top>img.logo-regent{
+  width:210px;
+  height:58px;
+  max-width:none;
+  max-height:none;
+  object-fit:contain;
+}
+
+.hotel-logo-box.logo-edition img,
+.hotel-top>img.logo-edition{
+  width:210px;
+  height:58px;
+  max-width:none;
+  max-height:none;
+  object-fit:contain;
+}
+
+.hotel-logo-box.logo-atlantis img,
+.hotel-top>img.logo-atlantis{
+  width:170px;
+  height:72px;
+  max-width:none;
+  max-height:none;
+  object-fit:contain;
+}
+
+.hotel-logo-box.logo-snow-peak img,
+.hotel-top>img.logo-snow-peak{
+  width:220px;
+  height:64px;
+  max-width:none;
+  max-height:none;
+  object-fit:cover;
+  object-position:center;
+}
+
+.hotel-logo-box.logo-marriott img,
+.hotel-top>img.logo-marriott{
+  width:155px;
+  height:64px;
+  max-width:none;
+  max-height:none;
+  object-fit:contain;
+}
+
+.hotel-logo-box.logo-kai img,
+.hotel-top>img.logo-kai{
+  width:150px;
+  height:64px;
+  max-width:none;
+  max-height:none;
+  object-fit:contain;
+}
+
+.hotel-logo-box.logo-omo img,
+.hotel-top>img.logo-omo{
+  width:175px;
+  height:64px;
+  max-width:none;
+  max-height:none;
+  object-fit:contain;
+}
+
+.hotel-status{
+  position:absolute;
+  right:28px;
+  top:22px;
+  padding:5px 9px;
+  border-radius:6px;
+  background:#f3f6f9;
+  color:#617b96;
+  font-size:11px;
+  line-height:1;
+}
+
+.hotel-brand{
+  grid-column:2;
+  grid-row:1;
+  margin:0 92px 5px 0;
+  font-size:12px;
+  line-height:1.3;
+  color:#6c86a2;
+}
+
+.hotel-name{
+  grid-column:2;
+  grid-row:2;
+  margin:0 92px 8px 0;
+  font-size:20px;
+  line-height:1.35;
+  font-weight:700;
+  color:#123c69;
+}
+
+.hotel-dates{
+  grid-column:2;
+  grid-row:3;
+  margin:0 92px 12px 0;
+  font-size:13px;
+  line-height:1.4;
+  color:#6883a1;
+}
+
+.hotel-note{
+  grid-column:2;
+  grid-row:4;
+  margin:0 70px 0 0;
+  max-width:900px;
+  font-size:13px;
+  line-height:1.7;
+  color:#617b96;
+}
+
+.hotel-arrow{
+  position:absolute;
+  right:28px;
+  bottom:24px;
+  font-size:22px;
+  line-height:1;
+  color:#6685a7;
+  opacity:0;
+  transform:translateX(-4px);
+  transition:opacity .18s ease,transform .18s ease;
+}
+
+.hotel-card:hover .hotel-arrow{
+  opacity:1;
+  transform:translateX(0);
+}
+
 @media (max-width:900px){
- .hotel-card{grid-template-columns:200px minmax(0,1fr);column-gap:22px;padding:20px}
- .hotel-top{padding:0 18px}
- .hotel-logo-box{height:105px}
- .hotel-logo-box img,.hotel-top>img.hotel-logo{max-width:175px}
+  .hotel-card{
+    grid-template-columns:200px minmax(0,1fr);
+    column-gap:22px;
+    padding:20px;
+  }
+  .hotel-top{padding:0 10px}
+  .hotel-logo-box{width:175px;height:100px}
+  .hotel-logo-box.logo-intercontinental img{width:220px;height:64px}
+  .hotel-logo-box.logo-st-regis img{width:170px;height:64px}
+  .hotel-logo-box.logo-ritz-carlton img{width:220px;height:64px}
 }
+
 @media (max-width:640px){
- .hotel-card{display:flex;flex-direction:column;align-items:stretch;gap:0;padding:18px;min-height:0}
- .hotel-top{min-height:92px;border-right:0;border-bottom:1px solid #edf1f5;padding:0;margin-bottom:16px}
- .hotel-logo-box{height:82px}
- .hotel-brand,.hotel-name,.hotel-dates,.hotel-note{margin-left:0;margin-right:0}
- .hotel-brand{margin-bottom:5px}.hotel-name{font-size:18px}.hotel-dates{margin-bottom:12px}
- .hotel-status{right:18px;top:18px}.hotel-arrow{right:18px;bottom:18px}
+  .hotel-card{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    padding:18px;
+    min-height:0;
+  }
+  .hotel-top{
+    min-height:100px;
+    border-right:0;
+    border-bottom:1px solid #edf1f5;
+    padding:0;
+    margin-bottom:16px;
+  }
+  .hotel-logo-box{height:88px}
+  .hotel-brand,.hotel-name,.hotel-dates,.hotel-note{
+    margin-left:0;
+    margin-right:0;
+  }
+  .hotel-brand{margin-bottom:5px}
+  .hotel-name{font-size:18px}
+  .hotel-dates{margin-bottom:12px}
+  .hotel-status{right:18px;top:18px}
+  .hotel-arrow{right:18px;bottom:18px}
 }
