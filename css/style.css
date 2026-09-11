@@ -122,22 +122,6 @@
   color:#6c86a2;
 }
 
-/* ---- Per-brand optical heights ---- */
-.hotel-logo-box.logo-sheraton{--logo-h:64px}          /* PNG, ~28% vertical padding */
-.hotel-logo-box.logo-ritz-carlton{--logo-h:88px}      /* PNG, very large padding */
-.hotel-logo-box.logo-marriott{--logo-h:56px}
-.hotel-logo-box.logo-st-regis{--logo-h:54px}
-.hotel-logo-box.logo-edition{--logo-h:28px}           /* ultra-wide wordmark */
-.hotel-logo-box.logo-atlantis{--logo-h:78px}
-.hotel-logo-box.logo-intercontinental{--logo-h:90px}  /* PNG, 16:9 canvas */
-.hotel-logo-box.logo-regent{--logo-h:27px}            /* ultra-wide wordmark */
-.hotel-logo-box.logo-hyatt-place{--logo-h:78px}       /* vertical brand mark */
-.hotel-logo-box.logo-unbound{--logo-h:74px}
-.hotel-logo-box.logo-omo{--logo-h:33px}
-.hotel-logo-box.logo-kai{--logo-h:58px}
-.hotel-logo-box.logo-nonokaze{--logo-h:37px}
-.hotel-logo-box.logo-royal-park{--logo-h:33px}
-.hotel-logo-box.logo-candeo{--logo-h:34px}
 
 .hotel-status{
   position:absolute;
@@ -245,4 +229,114 @@
   .hotel-dates{margin-bottom:12px}
   .hotel-status{right:18px;top:18px}
   .hotel-arrow{right:18px;bottom:18px}
+}
+
+
+/* =========================================================
+   2026-09 REVISION
+   1. correct logo matching   2. optical size + centring
+   3. white logos on white    4. visible card borders
+   5. hotel cards link out
+   ========================================================= */
+
+/* ---- 4. Visible borders for every card surface ---- */
+.summary-card,
+.trip-card,
+.rule{
+  background:var(--white);
+  border:1px solid #cfd9e4;
+  border-radius:12px;
+  box-shadow:0 1px 2px rgba(36,59,90,.04);
+}
+.trip-card{transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}
+.trip-card:hover{border-color:#a8bdd2;box-shadow:0 8px 24px rgba(36,59,90,.12)}
+.day-card,.history-table-wrap,.history-fact,.stay-mini,.day-map,.flight-card{border-color:#cfd9e4}
+.day-header{border-bottom-color:#cfd9e4}
+.hotel-card{border:1px solid #c7d4e1;box-shadow:0 2px 6px rgba(25,60,95,.05)}
+.hotel-card:hover{border-color:#9db6ce;box-shadow:0 10px 26px rgba(25,60,95,.11)}
+
+/* ---- 2. Logo stage: one fixed, larger stage for every brand ---- */
+.hotel-top{
+  min-height:132px;
+  padding:0 20px;
+  border-right:1px solid #e4eaf0;
+}
+.hotel-card{min-height:180px;grid-template-columns:296px minmax(0,1fr)}
+
+.hotel-logo-box{
+  position:relative;
+  width:236px;
+  height:104px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+/* Every logo is placed by four generated variables:
+   --lw/--lh  rendered size of the whole asset canvas
+   --dx/--dy  shift that moves the *visible mark* to the optical centre
+   The values are computed from the trimmed bounding box of each asset,
+   so marks look equally large and are truly centred even when the
+   source file has asymmetric transparent padding (e.g. St. Regis). */
+.hotel-logo-box img.hotel-logo{
+  display:block;
+  width:var(--lw,150px);
+  height:var(--lh,60px);
+  max-width:none;
+  object-fit:contain;
+  transform:translate(var(--dx,0),var(--dy,0));
+}
+
+/* ---- 3. White-only assets rendered on the light card ---- */
+.hotel-logo.logo-mono{filter:brightness(0) opacity(.88)}
+
+/* ---- 5. Cards are links now: keep the arrow affordance ---- */
+a.hotel-card{text-decoration:none;color:inherit;cursor:pointer}
+.hotel-arrow{opacity:0}
+.hotel-card:hover .hotel-arrow{opacity:1}
+
+/* ---- generated per-brand logo geometry ---- */
+.hotel-logo-box.logo-atlantis-royal{--lw:145.5px;--lh:81.8px;--dx:0.0px;--dy:-0.2px}
+.hotel-logo-box.logo-candeo{--lw:72.2px;--lh:84.1px;--dx:0.0px;--dy:0.0px}
+.hotel-logo-box.logo-edition{--lw:199.6px;--lh:36.9px;--dx:0.2px;--dy:-0.3px}
+.hotel-logo-box.logo-hyatt-place{--lw:78.5px;--lh:84.0px;--dx:0.0px;--dy:0.0px}
+.hotel-logo-box.logo-intercontinental{--lw:265.7px;--lh:149.4px;--dx:0.1px;--dy:7.3px}
+.hotel-logo-box.logo-kai{--lw:84.0px;--lh:84.0px;--dx:0.0px;--dy:0.0px}
+.hotel-logo-box.logo-marriott{--lw:149.8px;--lh:84.2px;--dx:0.0px;--dy:0.0px}
+.hotel-logo-box.logo-nonokaze{--lw:196.8px;--lh:57.4px;--dx:-1.3px;--dy:1.3px}
+.hotel-logo-box.logo-omo{--lw:189.9px;--lh:54.3px;--dx:0.0px;--dy:0.0px}
+.hotel-logo-box.logo-regent{--lw:198.3px;--lh:38.3px;--dx:0.0px;--dy:0.0px}
+.hotel-logo-box.logo-ritz-carlton{--lw:216.0px;--lh:121.5px;--dx:0.0px;--dy:0.0px}
+.hotel-logo-box.logo-royal-park{--lw:198.0px;--lh:49.8px;--dx:0.0px;--dy:0.0px}
+.hotel-logo-box.logo-sheraton{--lw:171.4px;--lh:96.4px;--dx:0.6px;--dy:0.7px}
+.hotel-logo-box.logo-snow-peak{--lw:198.0px;--lh:28.1px;--dx:0.0px;--dy:0.0px}
+.hotel-logo-box.logo-st-regis{--lw:196.3px;--lh:52.5px;--dx:0.0px;--dy:0.0px}
+.hotel-logo-box.logo-unbound{--lw:153.2px;--lh:114.9px;--dx:0.0px;--dy:-0.1px}
+
+@media (max-width:900px){
+  .hotel-card{grid-template-columns:268px minmax(0,1fr);column-gap:20px}
+  .hotel-top{padding:0 12px}
+  .hotel-logo-box{width:220px;height:100px}
+  .hotel-logo-box img.hotel-logo{
+    width:calc(var(--lw,150px) * .92);
+    height:calc(var(--lh,60px) * .92);
+    transform:translate(calc(var(--dx,0) * .92),calc(var(--dy,0) * .92));
+  }
+}
+
+@media (max-width:640px){
+  .hotel-card{min-height:0}
+  .hotel-top{
+    min-height:118px;
+    border-right:0;
+    border-bottom:1px solid #e4eaf0;
+    padding:0;
+  }
+  .hotel-logo-box{width:100%;max-width:236px;height:104px}
+  .hotel-logo-box img.hotel-logo{
+    width:var(--lw,150px);
+    height:var(--lh,60px);
+    transform:translate(var(--dx,0),var(--dy,0));
+  }
 }
