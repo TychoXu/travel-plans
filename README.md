@@ -1,16 +1,25 @@
 # Travel Plans
 
+🌐 **在线预览：<https://tychoxu.github.io/travel-plans/>**
+
 一个长期维护的个人旅行计划库。每次旅行一个独立 HTML 页面，首页 `index.html` 负责目录。
 
 ## GitHub Pages
 
-部署完成后，网站入口就是：
+网站入口：[https://tychoxu.github.io/travel-plans/](https://tychoxu.github.io/travel-plans/)
 
-`https://<你的GitHub用户名>.github.io/<你的仓库名>/`
+各行程页面直达链接：
 
-也可以在仓库的 **Settings → Pages → Build and deployment → Deploy from a branch** 中选择 `main` / `/ (root)`。
+- [珠海 · 澳门 · 香港｜2026](https://tychoxu.github.io/travel-plans/trips/zhuhai-hongkong-2026.html)
+- [新西兰 · 南岛自驾｜日期待定](https://tychoxu.github.io/travel-plans/trips/new-zealand.html)
+- [成都｜2026](https://tychoxu.github.io/travel-plans/trips/chengdu-2026.html)
+- [广西 · 北海 · 柳州｜2026](https://tychoxu.github.io/travel-plans/trips/beihai-liuzhou-2026.html)
+- [阿联酋 · 阿布扎比 · 迪拜｜2025](https://tychoxu.github.io/travel-plans/trips/uae-2025.html)
+- [日本 · 北海道｜2025](https://tychoxu.github.io/travel-plans/trips/hokkaido-2025.html)
+- [日本 · 九州｜2024](https://tychoxu.github.io/travel-plans/trips/kyushu-2024.html)
+- [日本 · 名古屋及周边｜2024](https://tychoxu.github.io/travel-plans/trips/nagoya-2024.html)
 
-> 为避免写死用户名和仓库名，README 使用占位形式；上传 GitHub 后把上面的两个占位符替换成实际值即可。
+部署设置：仓库 **Settings → Pages → Build and deployment → Deploy from a branch**，选择 `main` / `/ (root)`。
 
 ## Structure
 
@@ -22,6 +31,7 @@ travel-plans/
 │   └── style.css
 ├── trips/
 │   ├── zhuhai-hongkong-2026.html
+│   ├── new-zealand.html
 │   ├── nagoya-2024.html
 │   ├── kyushu-2024.html
 │   ├── uae-2025.html
@@ -54,6 +64,14 @@ travel-plans/
 - 澳门：当前代码版本使用澳门瑞吉（2 晚）
 - 香港：香港丽晶（3 晚）
 - 香港迪士尼：全天
+
+## 未来旅行计划
+
+**新西兰 · 南岛自驾｜日期待定，13 天 12 晚**
+
+基督城 → 奥马鲁 → 但尼丁 → 布拉夫 → 皇后镇 → 瓦纳卡 → 库克山 → 基督城（全程租车）
+
+旧版计划整理，暂未排具体日期与航班。
 
 ## 页面设计
 

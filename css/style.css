@@ -349,9 +349,14 @@ a.hotel-card{text-decoration:none;color:inherit;cursor:pointer}
 .hotel-note{margin-top:11px;padding-top:10px;font-size:11.5px;line-height:1.55;color:#6b7889}
 @media(max-width:600px){.flight-top{flex-wrap:wrap}.flight-aircraft{order:3}}
 
-/* ---- New Zealand plan: Crowne Plaza logo + wordmark fallback + pending card ---- */
+/* ---- New Zealand plan: hotel logo geometry ---- */
 .hotel-logo-box.logo-crowne-plaza{--lw:166.2px;--lh:63.6px;--dx:0.0px;--dy:0.0px}
+.hotel-logo-box.logo-lands-end{--lw:188.6px;--lh:54.7px;--dx:0.0px;--dy:0.0px}
+.hotel-logo-box.logo-ebb{--lw:138.7px;--lh:138.7px;--dx:-0.6px;--dy:0.0px}
+.hotel-logo-box.logo-edgewater{--lw:187.7px;--lh:54.9px;--dx:0.0px;--dy:0.0px}
+.hotel-logo-box.logo-hermitage{--lw:159.7px;--lh:64.6px;--dx:0.0px;--dy:0.0px}
+.hotel-logo-box.logo-ebb img.hotel-logo{clip-path:inset(20.13% 4.7% 20.13% 5.59%)}
+.hotel-logo-box.logo-poshtel{display:flex;align-items:center;justify-content:center;color:#31496b}
+.hotel-logo-inline{display:block}
 .hotel-logo-box.logo-wordmark{display:flex;align-items:center;justify-content:center;padding:0 14px}
 .hotel-logo-text{display:block;max-width:198px;color:#31496b;font-size:19px;font-weight:750;letter-spacing:.5px;line-height:1.25;text-align:center;text-transform:uppercase;font-family:Georgia,"Times New Roman",serif}
-.hotel-card.pending{cursor:default}
-.hotel-card.pending:hover{transform:none;box-shadow:var(--shadow)}
