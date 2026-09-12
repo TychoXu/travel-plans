@@ -361,6 +361,23 @@ a.hotel-card{text-decoration:none;color:inherit;cursor:pointer}
 .hotel-logo-box.logo-wordmark{display:flex;align-items:center;justify-content:center;padding:0 14px}
 .hotel-logo-text{display:block;max-width:198px;color:#31496b;font-size:19px;font-weight:750;letter-spacing:.5px;line-height:1.25;text-align:center;text-transform:uppercase;font-family:Georgia,"Times New Roman",serif}
 
+/* ---- Plan A / B switch ---- */
+.plan-switch{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 26px}
+.plan-switch-label{font-size:11px;font-weight:700;letter-spacing:1.4px;color:var(--muted);margin-right:4px}
+.plan-btn{appearance:none;cursor:pointer;border:1px solid var(--border);background:var(--white);color:var(--text);
+  padding:9px 16px;border-radius:999px;font-size:13px;font-weight:600;font-family:inherit;
+  letter-spacing:.3px;transition:all .18s ease}
+.plan-btn:hover{border-color:var(--blue);color:var(--blue)}
+.plan-btn.active{background:var(--navy);border-color:var(--navy);color:#fff}
+.plan-pane{display:none}
+.plan-pane.active{display:block}
+.plan-tagline{border:1px solid var(--border);border-left:3px solid var(--blue);background:var(--blue-light);
+  border-radius:8px;padding:12px 16px;margin:0 0 26px;font-size:12.5px;line-height:1.65;color:#41536d}
+.plan-tagline b{color:var(--navy);letter-spacing:.5px}
+.hotel-card.pending{cursor:default;border-style:dashed}
+.hotel-card.pending:hover{transform:none;box-shadow:var(--shadow)}
+.hotel-status.pending{background:var(--orange-light);color:var(--orange)}
+
 /* =========================================================
    DARK MODE
    Toggled by [data-theme="dark"] on <html>; remembered in
@@ -479,3 +496,12 @@ html[data-theme="dark"] .day-map .leaflet-control-attribution a{color:#8fb4e8}
 html[data-theme="dark"] .day-map .leaflet-bar a{background:#1d2530;color:#d2dbe6;border-color:#2c3644}
 html[data-theme="dark"] .day-map .leaflet-popup-content-wrapper,
 html[data-theme="dark"] .day-map .leaflet-popup-tip{background:#1d2530;color:#d2dbe6}
+
+html[data-theme="dark"] .plan-btn{background:#1b232e;border-color:#2c3644;color:#cfd8e3}
+html[data-theme="dark"] .plan-btn:hover{border-color:#6f8db8;color:#9dbbe0}
+html[data-theme="dark"] .plan-btn.active{background:#496ba4;border-color:#496ba4;color:#fff}
+html[data-theme="dark"] .plan-switch-label{color:#8794a5}
+html[data-theme="dark"] .plan-tagline{background:#1b232e;border-color:#2c3644;border-left-color:#6f8db8;color:#c2ccd8}
+html[data-theme="dark"] .plan-tagline b{color:#dbe4ef}
+html[data-theme="dark"] .hotel-card.pending{border-color:#39445400}
+html[data-theme="dark"] .hotel-status.pending{background:#2f2718;color:#d9a45b}
