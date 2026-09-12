@@ -360,3 +360,122 @@ a.hotel-card{text-decoration:none;color:inherit;cursor:pointer}
 .hotel-logo-inline{display:block}
 .hotel-logo-box.logo-wordmark{display:flex;align-items:center;justify-content:center;padding:0 14px}
 .hotel-logo-text{display:block;max-width:198px;color:#31496b;font-size:19px;font-weight:750;letter-spacing:.5px;line-height:1.25;text-align:center;text-transform:uppercase;font-family:Georgia,"Times New Roman",serif}
+
+/* =========================================================
+   DARK MODE
+   Toggled by [data-theme="dark"] on <html>; remembered in
+   localStorage by js/theme.js. Hotel logos keep a light
+   plate so dark-ink brand marks stay readable.
+   ========================================================= */
+
+.theme-toggle{
+  position:fixed;
+  top:18px;
+  right:18px;
+  z-index:900;
+  width:40px;
+  height:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0;
+  border:1px solid var(--border);
+  border-radius:50%;
+  background:var(--white);
+  color:var(--navy);
+  font-size:16px;
+  line-height:1;
+  cursor:pointer;
+  box-shadow:var(--shadow);
+  transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease;
+}
+.theme-toggle:hover{transform:translateY(-1px);box-shadow:var(--shadow-hover)}
+@media (max-width:640px){.theme-toggle{top:12px;right:12px;width:36px;height:36px;font-size:14px}}
+
+html[data-theme="dark"]{
+  --navy:#d8e4f2;
+  --navy-dark:#eaf1f9;
+  --text:#d2dbe6;
+  --muted:#93a1b3;
+  --blue:#8fb4e8;
+  --blue-light:#1b2734;
+  --green:#8ed3ac;
+  --green-light:#15251f;
+  --orange:#e3b374;
+  --orange-light:#2a2116;
+  --purple:#bfaae2;
+  --purple-light:#221c2e;
+  --border:#2c3644;
+  --background:#0f141b;
+  --white:#171e27;
+  --shadow:0 2px 8px rgba(0,0,0,.40);
+  --shadow-hover:0 10px 26px rgba(0,0,0,.55);
+  color-scheme:dark;
+}
+
+/* Surfaces that hardcode light values in the light theme */
+html[data-theme="dark"] .day-header,
+html[data-theme="dark"] .flight-top,
+html[data-theme="dark"] .history-table th,
+html[data-theme="dark"] .history-fact,
+html[data-theme="dark"] .stay-mini{background:#1b232e}
+
+html[data-theme="dark"] .summary-card,
+html[data-theme="dark"] .trip-card,
+html[data-theme="dark"] .rule,
+html[data-theme="dark"] .day-card,
+html[data-theme="dark"] .history-table-wrap,
+html[data-theme="dark"] .flight-card,
+html[data-theme="dark"] .hotel-card,
+html[data-theme="dark"] .day-tag{background:var(--white);border-color:#2c3644}
+
+html[data-theme="dark"] .history-fact,
+html[data-theme="dark"] .stay-mini,
+html[data-theme="dark"] .day-map{border-color:#2c3644}
+
+html[data-theme="dark"] .day-header{border-bottom-color:#2c3644}
+html[data-theme="dark"] .schedule-item,
+html[data-theme="dark"] .history-table th,
+html[data-theme="dark"] .history-table td,
+html[data-theme="dark"] .flight-top,
+html[data-theme="dark"] .flight-foot,
+html[data-theme="dark"] .hotel-note{border-color:#252f3c}
+html[data-theme="dark"] .hotel-top{border-right-color:#252f3c;border-bottom-color:#252f3c}
+
+html[data-theme="dark"] .hotel-card:hover,
+html[data-theme="dark"] .trip-card:hover{border-color:#41536b;box-shadow:0 10px 26px rgba(0,0,0,.55)}
+
+/* Text tones */
+html[data-theme="dark"] .history-table td,
+html[data-theme="dark"] .hotel-note,
+html[data-theme="dark"] .flight-foot,
+html[data-theme="dark"] .footer,
+html[data-theme="dark"] .source-note{color:#96a4b6}
+html[data-theme="dark"] .hotel-name,
+html[data-theme="dark"] .hotel-logo-text{color:#e6eef8}
+html[data-theme="dark"] .hotel-brand,
+html[data-theme="dark"] .hotel-dates,
+html[data-theme="dark"] .hotel-arrow{color:#93a1b3}
+html[data-theme="dark"] .hotel-status{background:#212b38;color:#9fb0c4}
+html[data-theme="dark"] .day-number{background:#2f4a70;color:#eaf1f9}
+html[data-theme="dark"] .day-weather{border-color:#2b3f5c;background:#18242f}
+html[data-theme="dark"] .flight-aircraft{border-color:#2b3a4c;background:#1b2430;color:#9fb0c4}
+html[data-theme="dark"] .flight-arrow:before{background:#33414f}
+html[data-theme="dark"] .flight-arrow span{background:var(--white)}
+html[data-theme="dark"] .highlight{border-color:#2c4d3b}
+html[data-theme="dark"] .fireworks{border-color:#4d3d24}
+html[data-theme="dark"] .disney{border-color:#3c3352}
+
+/* Hotel logos: keep a light plate, otherwise dark brand marks vanish */
+html[data-theme="dark"] .hotel-logo-box{background:#f4f6f8;border-radius:10px}
+html[data-theme="dark"] .hotel-logo-box.logo-wordmark .hotel-logo-text,
+html[data-theme="dark"] .hotel-logo-box.logo-poshtel{color:#31496b}
+
+/* Maps: tone the OSM tiles down to match the dark surfaces */
+html[data-theme="dark"] .day-map{background:#161d26}
+html[data-theme="dark"] .day-map .leaflet-tile{filter:invert(1) hue-rotate(180deg) brightness(.92) contrast(.92) saturate(.85)}
+html[data-theme="dark"] .day-map .leaflet-control-attribution{background:rgba(23,30,39,.82);color:#8c99aa}
+html[data-theme="dark"] .day-map .leaflet-control-attribution a{color:#8fb4e8}
+html[data-theme="dark"] .day-map .leaflet-bar a{background:#1d2530;color:#d2dbe6;border-color:#2c3644}
+html[data-theme="dark"] .day-map .leaflet-popup-content-wrapper,
+html[data-theme="dark"] .day-map .leaflet-popup-tip{background:#1d2530;color:#d2dbe6}
